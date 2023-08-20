@@ -20,6 +20,8 @@
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
+  - [Environment Variables](#environment-variables)
+  - [Obtaining Clerk Keys](#obtaining-clerk-keys)
   - [Development Workflow](#development)
   - [Run tests](#run-tests)
   - [Build](#build)
@@ -132,6 +134,31 @@ Install all the necessary packages:
 ```bash
   npm install
 ```
+
+## Environment Variables <a name="environment-variables"></a>
+
+Create a `.env.local` file in the root directory of your project and add the following environment variables:
+
+```plaintext
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=CLERK_PUBLISHABLE_KEY_HERE
+CLERK_SECRET_KEY=CLERK_SECRET_KEY_HERE
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+```
+
+## Obtaining Clerk Keys <a name="obtaining-clerk-keys"></a>
+
+To obtain the Clerk keys needed for the environment variables, follow these steps:
+
+1. Sign up for a Clerk account at [https://clerk.dev](https://clerk.dev).
+2. Log in to your Clerk dashboard.
+3. Generate the Clerk Publishable Key and Secret Key from the dashboard.
+4. Replace `CLERK_PUBLISHABLE_KEY_HERE` and `CLERK_SECRET_KEY_HERE` in your `.env.local` file with the respective keys you obtained.
+
+For the other `NEXT_PUBLIC_CLERK_*` environment variables, you can configure the appropriate URLs based on your application's requirements.
 
 ### Development Workflow <a name="development"></a>
 
