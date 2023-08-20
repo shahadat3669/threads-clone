@@ -34,7 +34,12 @@ module.exports = {
       name: '💚 ci:\tChanges to our CI configuration files and scripts',
     },
   ],
-  scopes: [{ name: 'readme' }, { name: 'development' }, { name: 'tailwind' }],
+  scopes: [
+    { name: 'readme' },
+    { name: 'development' },
+    { name: 'tailwind' },
+    { name: 'auth' },
+  ],
   scopeOverrides: {
     fix: [
       { name: 'merge' },
