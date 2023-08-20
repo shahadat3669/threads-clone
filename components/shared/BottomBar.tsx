@@ -25,7 +25,7 @@ const BottomBar = () => {
             )}
           >
             <Image src={link.iconURL} alt={link.label} width={24} height={24} />
-            <p className="text-xs font-medium leading-4 text-tc-light-100 max-md:hidden">
+            <p className="text-xs font-medium leading-4 text-tc-light-100 max-sm:hidden">
               {link.label.split(/\s+/)[0]}
             </p>
           </Link>
