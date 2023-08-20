@@ -4,6 +4,11 @@ import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import BottomBar from '@/components/shared/BottomBar';
+import LeftSidebar from '@/components/shared/LeftSidebar';
+import RightSidebar from '@/components/shared/RightSidebar';
+import TopBar from '@/components/shared/TopBar';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -20,7 +25,15 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <TopBar />
+          <main>
+            <LeftSidebar />
+            {children}
+            <RightSidebar />
+          </main>
+          <BottomBar />
+        </body>
       </html>
     </ClerkProvider>
   );
