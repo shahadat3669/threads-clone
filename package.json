@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "commit": "git-cz",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rimraf .next",
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "check-types": "tsc --noEmit --pretty"
   },
   "bugs": {
     "url": "https://github.com/shahadat3669/threads-clone/issues"
