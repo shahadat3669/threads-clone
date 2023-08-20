@@ -39,6 +39,7 @@ module.exports = {
     { name: 'development' },
     { name: 'tailwind' },
     { name: 'auth' },
+    { name: 'ui' },
   ],
   scopeOverrides: {
     fix: [
