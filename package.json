@@ -22,6 +22,7 @@
     "url": "git+https://github.com/shahadat3669/threads-clone.git"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.23.2",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0"
