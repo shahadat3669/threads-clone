@@ -17,15 +17,19 @@
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
+
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Environment Variables](#environment-variables)
   - [Obtaining Clerk Keys](#obtaining-clerk-keys)
+  - [Obtaining MongoDB URL](#obtaining-mongodb-url)
+  - [Obtaining UploadThing Keys](#obtaining-uploadthing-keys)
   - [Development Workflow](#development)
   - [Run tests](#run-tests)
   - [Build](#build)
   - [Deployment](#deployment)
+
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -135,21 +139,23 @@ Install all the necessary packages:
   npm install
 ```
 
-## Environment Variables <a name="environment-variables"></a>
+### Environment Variables <a name="environment-variables"></a>
 
 Create a `.env.local` file in the root directory of your project and add the following environment variables:
 
 ```plaintext
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=CLERK_PUBLISHABLE_KEY_HERE
 CLERK_SECRET_KEY=CLERK_SECRET_KEY_HERE
-
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+UPLOADTHING_SECRET=UPLOADTHING_SECRET_KEY_HERE
+UPLOADTHING_APP_ID=UPLOADTHING_APP_ID_HERE
+MONGODB_URL=MONGODB_URL_HERE
 ```
 
-## Obtaining Clerk Keys <a name="obtaining-clerk-keys"></a>
+### Obtaining Clerk Keys <a name="obtaining-clerk-keys"></a>
 
 To obtain the Clerk keys needed for the environment variables, follow these steps:
 
@@ -159,6 +165,31 @@ To obtain the Clerk keys needed for the environment variables, follow these step
 4. Replace `CLERK_PUBLISHABLE_KEY_HERE` and `CLERK_SECRET_KEY_HERE` in your `.env.local` file with the respective keys you obtained.
 
 For the other `NEXT_PUBLIC_CLERK_*` environment variables, you can configure the appropriate URLs based on your application's requirements.
+
+### Obtaining MongoDB URL <a name="obtaining-mongodb-url"></a>
+
+To obtain the MongoDB URL, follow these steps:
+
+1. Sign up for a MongoDB Atlas account at [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas).
+2. Create a new cluster by following the MongoDB Atlas documentation.
+3. Once your cluster is set up, navigate to the "Database Access" tab and create a new database user with a username and password.
+4. Go back to the "Clusters" view and click the "Connect" button on your cluster card.
+5. Select "Connect your application" and copy the connection string provided. It should look like:
+
+   ```
+   mongodb+srv://<username>:<password>@threads-cluster.jvsd6uc.mongodb.net/?retryWrites=true&w=majority
+   ```
+
+6. Replace `MONGODB_URL_HERE` in your `.env.local` file with the respective url you obtained. Don't forget to change `<username>` and `<password>` in the connection string with the credentials you created.
+
+### Obtaining UploadThing Keys <a name="obtaining-uploadthing-keys"></a>
+
+To obtain the UploadThing keys, follow these steps:
+
+1. Sign up for an UploadThing account at [https://uploadthing.com](https://uploadthing.com).
+2. Log in to your UploadThing dashboard.
+3. Generate the UploadThing Secret Key and App ID from the dashboard.
+4. Replace `UPLOADTHING_SECRET_KEY_HERE` and `UPLOADTHING_APP_ID_HERE` in your `.env.local` file with the respective keys you obtained.
 
 ### Development Workflow <a name="development"></a>
 

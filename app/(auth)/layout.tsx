@@ -1,6 +1,7 @@
 import '../globals.css';
 
 import { ClerkProvider } from '@clerk/nextjs';
+import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -16,7 +17,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={clsx(inter.className, 'bg-tc-dark-400')}>
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
