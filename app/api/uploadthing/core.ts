@@ -8,7 +8,7 @@ const getUser = async () => {
 };
 
 export const ourFileRouter = {
-  meda: f({ image: { maxFileSize: '4MB', maxFileCount: 1 } })
+  media: f({ image: { maxFileSize: '4MB', maxFileCount: 1 } })
     .middleware(async () => {
       const user = await getUser();
 
