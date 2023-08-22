@@ -1,7 +1,7 @@
 module.exports = {
   types: [
     { value: ':sparkles: feat', name: '✨ feat:\tAdding a new feature' },
-    { value: ':fix: fix', name: '🔧 fix:\tFixing a bug' },
+    { value: ':wrench: fix', name: '🔧 fix:\tFixing a bug' },
     { value: ':memo: docs', name: '📝 docs:\tAdd or update documentation' },
     {
       value: ':art: style',
